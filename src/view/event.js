@@ -1,6 +1,6 @@
 import {createElement} from '../render.js';
 
-function createNewTaskFilterButtonTemplate() {
+function createNewTaskEventTemplate() {
   return (
     `<form class="event event--edit" action="#" method="post">
     <header class="event__header">
@@ -165,9 +165,9 @@ function createNewTaskFilterButtonTemplate() {
   );
 }
 
-export default class NewTaskFilterButtonView {
+export default class NewTaskEventView {
   getTemplate() {
-    return createNewTaskFilterButtonTemplate();
+    return createNewTaskEventTemplate();
   }
 
   getElement() {
