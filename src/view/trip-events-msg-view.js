@@ -1,12 +1,12 @@
 import {createElement} from '../render.js';
 
-function createNewTaskTripEventsMsgTemplate() {
+function createTripEventsMsgTemplate() {
   return '<p class="trip-events__msg">Loading...</p>';
 }
 
-export default class NewTaskTripEventsMsgView {
+export default class TripEventsMsgView {
   getTemplate() {
-    return createNewTaskTripEventsMsgTemplate();
+    return createTripEventsMsgTemplate();
   }
 
   getElement() {

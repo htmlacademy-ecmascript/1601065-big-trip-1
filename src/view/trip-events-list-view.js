@@ -1,12 +1,12 @@
 import {createElement} from '../render.js';
 
-function createNewTaskFilterButtonTemplate() {
-  return '<button class="visually-hidden" type="submit">Accept filter</button>';
+function createTripEventsListTemplate() {
+  return '<ul class="trip-events__list"> </ul>';
 }
 
-export default class NewTaskFilterButtonView {
+export default class TripEventsListView {
   getTemplate() {
-    return createNewTaskFilterButtonTemplate();
+    return createTripEventsListTemplate();
   }
 
   getElement() {

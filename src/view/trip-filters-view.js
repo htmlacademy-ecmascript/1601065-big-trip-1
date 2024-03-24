@@ -1,6 +1,6 @@
 import {createElement} from '../render.js';
 
-function createNewTaskFormTemplate() {
+function createFormTemplate() {
   return (
     `<form class="trip-filters" action="#" method="get">
     <div class="trip-filters__filter">
@@ -28,9 +28,9 @@ function createNewTaskFormTemplate() {
   );
 }
 
-export default class NewTaskFormView {
+export default class TripFiltersView {
   getTemplate() {
-    return createNewTaskFormTemplate();
+    return createFormTemplate();
   }
 
   getElement() {
