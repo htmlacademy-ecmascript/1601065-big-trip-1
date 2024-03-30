@@ -1,14 +1,17 @@
 import {createElement} from '../render.js';
+import { humanizeEventDueDate } from '../utils.js';
 
-function createEventTemplate() {
+function createEventTemplate(event) {
+  const {offers, place, transport, dueDate} = event;
+  const date = humanizeEventDueDate(dueDate);
   return (
     `<li class="trip-events__item">
       <div class="event">
-        <time class="event__date" datetime="2019-03-18">MAR 18</time>
+        <time class="event__date" datetime="2019-03-18">${date}</time>
         <div class="event__type">
           <img class="event__type-icon" width="42" height="42" src="img/icons/taxi.png" alt="Event type icon">
         </div>
-        <h3 class="event__title">Taxi Amsterdam</h3>
+        <h3 class="event__title">${transport}${place}</h3>
         <div class="event__schedule">
           <p class="event__time">
             <time class="event__start-time" datetime="2019-03-18T10:30">10:30</time>
@@ -43,8 +46,12 @@ function createEventTemplate() {
 }
 
 export default class EventView {
+  constructor({event}) {
+    this.event = event;
+  }
+
   getTemplate() {
-    return createEventTemplate();
+    return createEventTemplate(this.event);
   }
 
   getElement() {
