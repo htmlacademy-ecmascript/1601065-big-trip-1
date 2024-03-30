@@ -1,7 +1,7 @@
 import {getRandomArrayElement} from '../utils.js';
 import {PLACE, TRANSPORT, OFFERS} from '../const.js';
 
-const mockTasks = [
+const mockEvents = [
   {
     description: 'Путь',
     dueDate: new Date('2014-01-01'),
@@ -47,7 +47,7 @@ const mockTasks = [
 ];
 
 function getRandomTask() {
-  return getRandomArrayElement(mockTasks);
+  return getRandomArrayElement(mockEvents);
 }
 
 export {getRandomTask};

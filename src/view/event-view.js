@@ -1,9 +1,9 @@
 import {createElement} from '../render.js';
-import { humanizeTaskDueDate } from '../utils.js';
+import { humanizeEventDueDate } from '../utils.js';
 
-function createEventTemplate(task) {
-  const {offers, place, transport, dueDate} = task;
-  const date = humanizeTaskDueDate(dueDate);
+function createEventTemplate(event) {
+  const {offers, place, transport, dueDate} = event;
+  const date = humanizeEventDueDate(dueDate);
   return (
     `<li class="trip-events__item">
       <div class="event">
@@ -46,12 +46,12 @@ function createEventTemplate(task) {
 }
 
 export default class EventView {
-  constructor({task}) {
-    this.task = task;
+  constructor({event}) {
+    this.event = event;
   }
 
   getTemplate() {
-    return createEventTemplate(this.task);
+    return createEventTemplate(this.event);
   }
 
   getElement() {

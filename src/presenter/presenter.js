@@ -6,22 +6,22 @@ import { render } from '../render.js';
 
 export default class BoardPresenter {
   sortComponent = new TripSortView();
-  taskListComponent = new TripEventsListView();
+  eventListComponent = new TripEventsListView();
 
-  constructor({boardContainer, taskModel}) {
+  constructor({boardContainer, eventModel}) {
     this.boardContainer = boardContainer;
-    this.taskModel = taskModel;
+    this.eventModel = eventModel;
   }
 
   init() {
-    this.boardTasks = [...this.taskModel.getTasks()];
+    this.boardEvents = [...this.eventModel.getTasks()];
 
     render(this.sortComponent, this.boardContainer);
-    render(this.taskListComponent, this.boardContainer);
-    render(new EventFormView(), this.taskListComponent.getElement());
+    render(this.eventListComponent, this.boardContainer);
+    render(new EventFormView(), this.eventListComponent.getElement());
 
-    for (let i = 0; i < this.boardTasks.length; i++) {
-      render(new EventView({task: this.boardTasks[i]}), this.taskListComponent.getElement());
+    for (let i = 0; i < this.boardEvents.length; i++) {
+      render(new EventView({event: this.boardEvents[i]}), this.eventListComponent.getElement());
     }
   }
 }

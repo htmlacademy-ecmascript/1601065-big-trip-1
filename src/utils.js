@@ -6,8 +6,12 @@ function getRandomArrayElement(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
 
-function humanizeTaskDueDate(dueDate) {
+function humanizeEventDueDate(dueDate) {
   return dueDate ? dayjs(dueDate).format(DATE_FORMAT) : '';
 }
 
-export {getRandomArrayElement, humanizeTaskDueDate};
+function isEventExpired(dueDate) {
+  return dueDate && dayjs().isAfter(dueDate, 'D');
+}
+
+export {getRandomArrayElement, humanizeEventDueDate, isEventExpired};
